@@ -9,7 +9,7 @@ class JdspiderSpider(scrapy.Spider):
     i = 1
     url1 = 'https://search.jd.com/Search?keyword=%E5%8F%A3%E7%BA%A2&enc=utf-8&qrst=1&rt=1&stop=1&vt=2&suggest=3.def.0.V08&wq=kou&stock=1&page='
     url2 = '&s=54&click=0'
-    start_urls = [url1 + str(i) + url2]
+    start_urls = str(i).join([url1,url2])
     
     def parse(self, response):
         temp_list = response.xpath("//*[@id='J_goodsList']/ul/li")
